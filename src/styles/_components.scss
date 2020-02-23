@@ -1,0 +1,86 @@
+/*
+Search Module
+*/
+
+.search-module {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+
+  .search-module__input {
+    align-items: center;
+    background: $color-white;
+    display: flex;
+    position: relative;
+
+    i {
+      color: $color-black;
+    }
+  }
+
+  input {
+    background: transparent;
+    border: none;
+    height: 32px;
+  }
+
+  .shopping {
+    align-items: center;
+    display: flex;
+    background: $color-blue;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+}
+
+/*
+  Login Module
+*/
+.login {
+  align-items: center;
+  display: flex;
+
+  a {
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+/*
+  Product Module
+*/
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+
+.shoes-a {
+  grid-area: header;
+}
+
+.shoes-b {
+  grid-area: shoesb;
+}
+
+.shoes-c {
+  grid-area: shoesc;
+}
+
+.product-info {
+  grid-area: pinfo;
+}
+
+.look {
+  grid-area: look;
+}
+
+.product-config {
+  grid-area: pconfig;
+}
