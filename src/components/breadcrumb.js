@@ -1,15 +1,23 @@
 import React from 'react';
+import Logo from '../Images/logo_black.svg';
 
 const Breadcrumb = () => {
     return(
-        <div>
-            <div>
-                <svg class="gl-icon usp-header-item-icon___3ElD7 gl-icon--size-communication" data-di-res-id="2a9d7a68-c0a1a2ab" data-di-rand="1582394081565"></svg>
-                <p>Free shipping over $49 and free returns</p>
-            </div>
-            <div>
-                <svg class="gl-icon usp-header-item-icon___3ElD7 gl-icon--size-communication" data-di-res-id="4d979652-f7865de0" data-di-rand="1582394081565"></svg>
-                <p>Join the adidas creator club</p>
+        <div className="container-full">
+            <div className="breadcrumb">
+            <ul>
+                <li>
+                <div className="back">
+                    <i className="material-icons arrow-left">
+                        subdirectory_arrow_right
+                    </i>
+                    <a href="#">Back</a>
+                </div>
+                </li>
+                <li><a href="#">Home</a><span>/</span></li>
+                <li><a href="#">Original</a><span>/</span></li>
+                <li><a href="#">Shoes</a></li>
+            </ul>
             </div>
         </div>
     );

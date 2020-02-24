@@ -1,6 +1,6 @@
 html {
     box-sizing: border-box;
-    font-size: calc(1rem + ((1vw - 4.8px) * 1.1111));
+    font-size: 16px;
   }
   
   *, *:before, *:after {
@@ -61,6 +61,7 @@ html {
       li {
         a {
           color: $color-white;
+          font-family: 'adineuePRO-Regular';
           padding: 0 10px;
           text-transform: uppercase;
           text-decoration: none;
@@ -99,6 +100,13 @@ html {
 
     ul {
       align-items: center;
+      
+      li {
+        a {
+          font-family: 'AdihausDIN-Regular';
+        }
+      }
+      
     }
   }
 
@@ -121,6 +129,29 @@ html {
   }
   
   .bold {
-    font-family: 'AdihausDIN-Bold';
+    font-weight: 800;
+  }
+
+  .title-product {
+    font-family: 'adineuePRO-Bold';
+    font-size: 26px;
+  }
+
+  .subtitle-product {
+    font-family: 'AdihausDIN-Regular';
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .title-available {
+    font-size: 20px;
+    text-transform: uppercase;
   }
   
+
+  @include mobile {
+    .container-full {
+      padding: 0 16px;
+    }
+  }

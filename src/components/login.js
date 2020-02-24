@@ -5,7 +5,7 @@ const Login = ({options}) => {
     return(
         <div className="login">
         <a href="#">Log in</a>
-          <i class="material-icons">
+          <i className="material-icons">
           person
           </i>
         </div>
