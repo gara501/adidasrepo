@@ -2,7 +2,7 @@ import React from 'react';
 
 const Available = ({ colors }) => {
     return(
-        <div className="available">
+        <div className="available container-block">
             <h5 className="title-available">Available Colors</h5>
             <ul className="available--tags">
               <li><span>cloud  white</span><span>/</span></li>

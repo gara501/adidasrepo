@@ -7,6 +7,7 @@ const ListSizes = ({options, title, category}) => {
     const buttonsRef = useRef();
     
     const toggleList = (e) => {
+        e.preventDefault();
         if (open === 'closed') {
             setOpen('open');
         } else {

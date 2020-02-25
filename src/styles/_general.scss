@@ -43,8 +43,16 @@ html {
     padding: 0 16px;
   }
 
+  .container-checkout {
+    flex-flow: column;
+  }
+
   .container-full {
     width: 100%;
+  }
+
+  .container-block {
+    max-width: 400px;
   }
 
   .container-nav {
@@ -132,6 +140,10 @@ html {
     font-weight: 800;
   }
 
+  .uppercase {
+    text-transform: uppercase;
+  }
+
   .title-product {
     font-family: 'adineuePRO-Bold';
     font-size: 26px;
@@ -146,6 +158,12 @@ html {
 
   .title-available {
     font-size: 20px;
+    text-transform: uppercase;
+  }
+
+  .title-checkout {
+    font-family: 'adineuePRO-Bold';
+    font-size: 42px;
     text-transform: uppercase;
   }
   

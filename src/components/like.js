@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Like = ({name}) => {
+const Like = () => {
     return(
-        <div>
-            <svg class="gl-icon" data-di-res-id="aec490b-5a73ced7" data-di-rand="1582404333611"></svg>
-        </div>
+        <button className="like">
+            <i className="material-icons">
+            favorite_border
+            </i>
+        </button>
     );
 }
 

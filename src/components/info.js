@@ -3,7 +3,7 @@ import Rating from './rating';
 
 const Info = () => {
     return(
-      <div className="info">
+      <div className="info container-block">
         <div className="info--rating">
           <Rating stars={3} />
           <a href="#" >Read all 33 reviews</a>
