@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from '../Images/logo_black.svg';
+import LinkCmp from './link';
 
-const Breadcrumb = () => {
+const Breadcrumb = ({items}) => {
     return(
-        <div className="container-full">
+        <div className="container-xl">
             <div className="breadcrumb">
             <ul>
                 <li>
@@ -14,9 +14,10 @@ const Breadcrumb = () => {
                     <a href="#">Back</a>
                 </div>
                 </li>
-                <li><a href="#">Home</a><span>/</span></li>
-                <li><a href="#">Original</a><span>/</span></li>
-                <li><a href="#">Shoes</a></li>
+                <li><LinkCmp text='Home' href='/' /> <span>/</span></li>
+                { items.map((item, index) => (
+                    <li key={index}><LinkCmp text={item.text} href={item.link} /> {index === items.length-1 ? '':  <span>/</span>} </li>
+                ))}
             </ul>
             </div>
         </div>

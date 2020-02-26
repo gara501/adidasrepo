@@ -1,28 +1,31 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
-const Available = ({ colors }) => {
+const Available = ({ product, dispatch }) => {
+
+    const itemRef = useRef();
+
+    const changeProduct = (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      console.log('target', e.target);
+      e.target.classList.add('item--selected');
+      console.log('ITEM REF', itemRef.current)
+      //setSelected('item--selected');
+      
+      
+    }
+
     return(
         <div className="available container-block">
             <h5 className="title-available">Available Colors</h5>
-            <ul className="available--tags">
-              <li><span>cloud  white</span><span>/</span></li>
-              <li><span>core black</span><span>/</span></li>
-              <li><span>crystal  white</span></li>
-            </ul>
+              <p>{product.attribute_list.color}</p>
             <div className="available--colors">
-              {colors.map((item, index) => (
-                <div key={index} className="available--item">
-                  { index === 4 ?  
-                    <div className="item-cover">
-                      <div className="item--selected">
-                        <img src={item} alt="item" />
-                        <div className="item--check"><i className="material-icons">check</i></div>
-                      </div>
-                    </div> : 
-                    <div className="item-cover">
-                      <img src={item} alt="item" />
-                    </div>
-                  }
+              {product.product_link_list.map((item, index) => (
+                <div key={index} ref={itemRef} id={item.productId} className="available--item" onClick={changeProduct}>
+                  <div className="item-cover">
+                    <img src={item.image} alt={item.altImage} />
+                    <div className="item--check"><i className="material-icons">check</i></div>
+                  </div>                  
                 </div>
               ))}
             </div>

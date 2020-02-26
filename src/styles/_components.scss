@@ -149,7 +149,7 @@ Vertical Gallery
 .breadcrumb {
   align-items: center;
   display: flex;
-  margin: 10px 0;
+  margin: 5px 0;
   padding-left: 30px;
 
   a {
@@ -180,6 +180,8 @@ Vertical Gallery
   }
 
   .back {
+    align-items: center;
+    display: flex;
     margin-right: 20px;
 
     a {
@@ -303,25 +305,11 @@ Available Colors
 .available {
   padding: 0 20px;
 
-  .available--tags {
-    display: flex;
-    flex-flow: row wrap;
+  p {
+    color: $color-gray;
+    font-size: 14px;
     margin: 10px 0;
-
-    li {
-      span {
-        color: $color-gray;
-        font-family: 'AdihausDIN-Regular';
-        font-size: 13px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        
-        &:nth-of-type(2) {
-          margin: 0 10px;
-        }
-      }
-    }
-    
+    text-transform: uppercase;
   }
 
   .available--colors {
@@ -332,35 +320,40 @@ Available Colors
 
     .item-cover {
       align-items: center;
-      
       display: flex;
       height: 70px;
       justify-content: center;
+      position: relative;
       width: 70px;
 
       img {
         border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .item--check {
+        display: none;
       }
 
       .item--selected {
         position: relative;
-      }
 
-      .item--check {
-        align-items: center;
-        background-color: $color-black;
-        border-radius: 50%;
-        right: 0;
-        top: 0;
-        display: flex;
-        height: 25px;
-        justify-content: center;
-        position: absolute;
-        width: 25px;
-
-        i {
-          color: $color-white;
-          font-size: 18px;
+        .item--check {
+          align-items: center;
+          background-color: $color-black;
+          border-radius: 50%;
+          right: 0;
+          top: 0;
+          display: flex;
+          height: 25px;
+          justify-content: center;
+          position: absolute;
+          width: 25px;
+  
+          i {
+            color: $color-white;
+            font-size: 18px;
+          }
         }
       }
     }
@@ -722,13 +715,14 @@ Modal
   .modal--product-left {
     border-right: 1px solid $color-black;
     img {
+      height: 90%;
       width: 50%;
     }
     .modal--product-left-info {
       padding: 0 10px;
 
       .modal--price {
-        font-size: 14px;
+        font-size: 16px;
         margin: 15px 0;
       }
     }
@@ -794,12 +788,12 @@ Checkout
   }
 
   .checkout-items {
-    width: 55%;
+    width: 60%;
   }
 
   .checkout-payment {
     padding-top: 20px;
-    width: 40%;
+    width: 35%;
   }
 }
 
@@ -851,6 +845,11 @@ Item Checkout
 
   .item-checkout-info {
     padding: 30px 50px 0 30px;
+
+    a {
+      color: $color-black;
+      text-decoration: none;
+    }
   }
 
   .item-checkout-buttons {
@@ -870,6 +869,98 @@ Item Checkout
         i {
           color: $color-gray;
         }
+      }
+    }
+  }
+}
+
+/*
+Summary
+*/
+
+.summary-component {
+  font-size: 14px;
+  margin-top: 50px;
+  text-transform: uppercase;
+  
+  div {
+    margin: 10px 0;
+  }
+
+  .summary {
+    border: 1px solid $color-darkwhite;
+    padding: 20px;
+
+    .summary-total {
+      font-size: 16px;
+    }
+  }
+
+  .help {
+    display: flex;
+    flex-flow: column;
+    margin-top: 50px;
+
+    .title-small {
+      margin: 10px 0;
+    }
+
+    a {
+      font-size: 16px;
+      margin: 10px 0;
+      text-transform: capitalize;
+    }
+
+    img {
+      margin-top: 10px;
+    }
+  }
+
+  .promo-code {
+    border: 1px solid $color-black;
+    height: 50px;
+    margin-top: 20px;
+    position: relative;
+
+    i {
+      font-size: 28px;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      transform: rotate(45deg);
+
+      &.hidden {
+        display: none;
+      }
+    }
+
+    label {
+      background: white;
+      color: $color-gray;
+      font-size: 16px;
+      left: 20px;
+      position: absolute;
+      top: 15px;
+      text-transform: uppercase;
+      transition: 200ms all ease;
+      z-index: -1;
+
+      &.label-move {
+        transform: translate(-10px, -25px) scale(.9);
+        z-index: 2;
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      padding: 0 20px;
+      height: 45px;
+      width: 100%;
+      z-index: 2;
+
+      &:focus {
+        outline: none;
       }
     }
   }

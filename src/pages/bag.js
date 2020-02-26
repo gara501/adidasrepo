@@ -1,6 +1,7 @@
 import React from 'react';
 import CheckoutButtons from '../components/checkoutButtons';
 import ItemCheckout from '../components/itemcheckout';
+import Summary from '../components/summary';
 
 const Bag = () => {
     return(
@@ -18,6 +19,7 @@ const Bag = () => {
                     </div>
                     <div className="checkout-payment">
                         <CheckoutButtons orientation="vertical" />
+                        <Summary />
                     </div>
                 </div>
             </div>    
