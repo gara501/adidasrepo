@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../store';
+import { useHistory } from "react-router-dom";
 import Button from './button';
 
 const Modal = (props) => {
-    const {showModal, closeModal, dispatch, state} = props;
+    
+    const { dispatch, state} = useContext(Context);
 
-    console.log('MODAL STATE', state);
+    const {showModal, closeModal} = props;
+
     const totalValue = Math.round(state.quantity * state.product.pricing_information.currentPrice).toFixed(2);
     const payments = Math.round(totalValue / 3).toFixed(2);
+    let history = useHistory();
+
+    const handlerBag = (e) => {
+      closeModal(); 
+      history.push("/bag");
+    }
 
     return(
         <div className={showModal ? 'overlay': ''}>
@@ -47,7 +57,7 @@ const Modal = (props) => {
                           <p>Prefer to spread out the payment? Select ‘Affirm’ at checkout to pay in 3 interest-free installments of ${payments}</p>
                         </div>
                         <div className="bag-buttons">
-                          <Button theme='dark' text='add to bag' />
+                          <Button theme='dark' text='add to bag' action={handlerBag} />
                           <Button theme='light' text='go to checkout' />
                         </div>
                       </div>
