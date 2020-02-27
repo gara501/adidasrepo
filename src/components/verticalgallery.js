@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../store';
 
 
-const VerticalGallery = ({images, dispatch}) => {
+const VerticalGallery = ({images}) => {
+    
+    const { dispatch} = useContext(Context);
 
     const setImage = (e) => {
       e.preventDefault();

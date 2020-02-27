@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../store';
 import ListSizes from './listSizes';
 import Button from './button';
 import Like from './like';
 import LinkBase from './link';
 
-const ItemCart = ({ dispatch, state }) => {
+const ItemCart = () => {
+    
+    const { state, dispatch} = useContext(Context);
 
     const showModal = () => {
       dispatch({type: 'OPEN_MODAL', payload: 'open'});
